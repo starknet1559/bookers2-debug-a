@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+  <tr>
+    <th>今日の投稿数</th>
+    <th>前日の投稿数</th>
+    <th>前日比</th>
+  </tr>
+  <tr>
+    <td><%= today %></td>
+    <td><%= yesterday %></td>
+    <td><%= comp_preday * 100 %>%</td>
+  </tr>
+  <tr>
+    <th>今週の投稿数</th>
+    <th>前週の投稿数</th>
+    <th>前週比</th>
+  </tr>
+  <tr>
+    <td><%= this_week %></td>
+    <td><%= last_week %></td>
+    <td><%= week * 100 %>%</td>
+  </tr>
+</table>
