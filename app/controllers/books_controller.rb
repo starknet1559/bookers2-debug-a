@@ -17,6 +17,7 @@ class BooksController < ApplicationController
       b.favorites.where(created_at: from...to).size <=> 
       a.favorites.where(created_at: from...to).size
     }
+    @books_count = Book.all
     @book = Book.new
   end
 

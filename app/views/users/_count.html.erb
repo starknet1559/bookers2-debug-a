@@ -5,9 +5,15 @@
     <th>前日比</th>
   </tr>
   <tr>
-    <td><%= today %></td>
-    <td><%= yesterday %></td>
-    <td><%= comp_preday * 100 %>%</td>
+    <td><%= @today %></td>
+    <td><%= @yesterday %></td>
+    <td>
+      <% if @yesterday == 0 %>計算エラー
+      <% else %>
+      <% @comp_day = @today / @yesterday.to_f %>
+      <%= (@comp_day * 100).round %>%
+      <% end %>
+    </td>
   </tr>
   <tr>
     <th>今週の投稿数</th>
@@ -15,8 +21,14 @@
     <th>前週比</th>
   </tr>
   <tr>
-    <td><%= this_week %></td>
-    <td><%= last_week %></td>
-    <td><%= week * 100 %>%</td>
+    <td><%= @this_week %></td>
+    <td><%= @last_week %></td>
+    <td>
+      <% if @last_week == 0 %>計算エラー
+      <% else %>
+      <% @comp_week = @this_week / @last_week.to_f %>
+      <%= (@comp_week * 100).round %>%
+      <% end %>
+    </td>
   </tr>
 </table>

@@ -1,0 +1,22 @@
+<h3>7日間分の投稿数</h3>
+<table class="table table-bordered">
+  <tr>
+    <th>6日前</th>
+    <th>5日前</th>
+    <th>4日前</th>
+    <th>3日前</th>
+    <th>2日前</th>
+    <th>1日前</th>
+    <th>今日</th>
+  </tr>
+  <tr>
+    <td><%= books_count.created_6days.count %></td>
+    <td><%= books_count.created_5days.count %></td>
+    <td><%= books_count.created_4days.count %></td>
+    <td><%= books_count.created_3days.count %></td>
+    <td><%= books_count.created_2days.count %></td>
+    <td><%= books_count.created_yesterday.count %></td>
+    <td><%= books_count.created_today.count %></td>
+  </tr>
+</table>
+<%= line_chart Book.group_by_day_of_week(:created_at).count %>
